@@ -46,11 +46,12 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(arr){
+  const cArray = arr.slice(0);
+  return cArray;
 }
 
-
+copy(originalFlavors);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Confirm that an array is exactly 31 flavors. Your function should accept:
@@ -63,11 +64,11 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(arr){
+  return arr.length === 31;
  }
 
-
+is31Flavors(originalFlavors);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -82,11 +83,11 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(arr, str){
+  return arr.unshift(str);
  }
 
-
+addFlavor(originalFlavors, "Rainbow Sherbert");
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -100,11 +101,11 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(arr){
+ return arr.pop();
 }
 
-
+removeLastFlavor(originalFlavors);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
@@ -118,11 +119,11 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(arr, str){
+  return arr.indexOf(str);
 }
 
-
+getFlavorByIndex(originalFlavors, "Black Walnut");
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
@@ -138,10 +139,12 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(arr, str){
+  let name = arr.indexOf(str);
+  return arr.splice(str, 1);
 }
 
+removeFlavorByName(originalFlavors, "Rocky Road");
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -163,11 +166,13 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(arr, str){
+  if (arr.indexOf(str)) {
+    return ('this item is in the array');
+  } else {return arr.unshift(str);}
 }
 
-
+filterByWord(originalFlavors, "chocolate");
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
@@ -181,10 +186,11 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(arr){
+  return arr.length;
 }
 
+getAverageWordLength(originalFlavors)
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
 Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
@@ -198,10 +204,16 @@ Use the getRandomFlavors function and new arrays below to do the following:
   For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
-
-function getRandomFlavors(/*code here*/){
-  /*code here*/
+//const randomFlavors = [originalFlavors, currentFlavors, seasonalFlavors, regionalFlavors];
+function getRandomFlavors(arrOriginal, arrNew, arrSeasonal, arrRegional){
+  let randomInx = Math.floor(Math.random() * 32);
+  const randomFlavors = [arrOriginal, arrNew, arrSeasonal, arrRegional];
+  for (i = 0; i < randomFlavors.length; i++){
+    return i;
+  }
 }
+
+getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors);
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 // const newFlavors = [
