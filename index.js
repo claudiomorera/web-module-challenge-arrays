@@ -87,8 +87,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(arr, str){
-  return arr.unshift(str);
+function addFlavor(arr, flavor){
+   arr.unshift(flavor);
+   return arr;
  }
 
 addFlavor(originalFlavors, "Rainbow Sherbert");
@@ -106,7 +107,8 @@ Use the removeLastFlavor function below to do the following:
 
 
 function removeLastFlavor(arr){
- return arr.pop();
+	arr.pop();
+	return arr;
 }
 
 removeLastFlavor(originalFlavors);
@@ -124,7 +126,8 @@ Use the getFlavorByIndex function below to do the following:
 
 
 function getFlavorByIndex(arr, str){
-  return arr.indexOf(str);
+	arr.indexOf(str);
+	return arr;
 }
 
 getFlavorByIndex(originalFlavors, "Black Walnut");
