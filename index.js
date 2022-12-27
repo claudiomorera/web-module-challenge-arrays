@@ -125,9 +125,8 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(arr, str){
-	arr.indexOf(str);
-	return arr;
+function getFlavorByIndex(arr, n){
+	return arr[n];
 }
 
 getFlavorByIndex(originalFlavors, "Black Walnut");
